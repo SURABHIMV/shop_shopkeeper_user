@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/css/dist/mdb5/standard/core.min.css">
+    <link rel="stylesheet" id="roboto-subset.css-css" href="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/css/mdb5/fonts/roboto-subset.css?ver=3.9.0-update.5" type="text/css" media="all">
+
+    <style>
+        table {
+            width: 100%; /* Set table width to 100% */
+            border-collapse: collapse; /* Collapse border spacing */
+        }
+        th, td {
+            padding: 10px; /* Add padding to cells */
+            text-align: center; /* Align cell content to the left */
+            border: 1px solid #dddddd; /* Add border to cells */
+        }
+        /* Set widths for individual columns */
+        th:nth-child(1),
+        td:nth-child(1) {
+            width: 30%; /* Adjust width for first column */
+        }
+        th:nth-child(2),
+        td:nth-child(2) {
+            width: 40%; /* Adjust width for second column */
+        }
+        th:nth-child(3),
+        td:nth-child(3) {
+            width: 30%; /* Adjust width for third column */
+        }
+        /* Style to remove the border around the input field */
+        input[type="text"] {
+            border: none; /* Remove border */
+            outline: none; /* Remove outline */
+            text-align: center;
+        }    
+    </style>
+
+</head>
+<body>
+    <br>
+    <h2>Product list</h2>
+    <br>
+    <table>
+        <tr>
+            <th>Product_Name</th>
+            <th>Product_Quantity</th>
+        </tr>
+        {% for pr in product %}  <!-- Assuming 'patients' is passed from the view -->
+            {% if pr.product_Name != None %}
+                <tr>
+                    <td>{{ pr.product_Name }}</td>
+                    <td>{{ pr.product_Quantity }}</td>   
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+</body>
+</html>
